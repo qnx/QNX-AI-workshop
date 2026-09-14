@@ -25,7 +25,7 @@ Depending on which camera you are using when running you will need to specific a
 
 ##### RPI5
 - usb-camera - CAMERA_UNIT_5
-- rpi-camera - CAMERA_UNIT_3
+- rpi-camera - CAMERA_UNIT_4
 
 ##### RPI4
 - usb-camera - CAMERA_UNIT_4
