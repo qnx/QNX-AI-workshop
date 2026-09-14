@@ -13,7 +13,7 @@ In order to build the project a few dependencies need to be installed in order t
 > For RPI5 QSTI starting in 8.0.5 multiple camera unit have been exposed in a single running Sensor Framework instance making this step unneeded
 A camera must be configured through sensor framework for this demo.
 
-The demo has been verified with the RPI Camera Module 3 and Logitech C270 USB camera
+The demo has been verified with the RPI Camera Module 3, Logitech C270 USB camera, and Logitech C920X PRO HD camera.
 
 By default camera unit 5 will be used but this can be changed by the following CLI options
 ```sh
