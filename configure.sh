@@ -23,7 +23,7 @@ fi
 # Check for apks
 if [ -d "${LOCAL_APK_PATH}" ]; then
     echo "Installing Local APKS from ${LOCAL_APK_PATH}"
-    sudo apk add --no-network ${LOCAL_APK_PATH}/*.apk
+    sudo apk add --no-network --allow-untrusted ${LOCAL_APK_PATH}/*.apk
 else
     echo "Installing apk dependencies using network"
     sudo apk add opencv-dev tflite-runtime-dev tflite-runtime flatbuffers-dev gtk4-dev ros2-jazzy python3-dev python3-numpy python3-numpy-dev qnx-sf-base-dev
