@@ -6,29 +6,21 @@ Native QNX hand-landmark tracking with sensor framework and TFLite.
 ### Build and Runtime Dependencies
 In order to build the project a few dependencies need to be installed in order to support building on the target. in order to install dependencies run the provided `configure.sh` script. This script should be used instead of installing the dependencies themselves as during workshop the /boot will be prefetched with everything you need.
 ```bash
-./configure.sh
+sudo ./configure.sh
 ```
 
 ### Camera
-> For RPI5 QSTI starting in 8.0.5 multiple camera unit have been exposed in a single running Sensor Framework instance making this step unneeded
-A camera must be configured through sensor framework for this demo.
+> For the best experience ensure you are using the latest QSTI version.
+The demo has been verified with the Pi Camera Module 3 and Logitech C270 & C920 USB cameras. By default camera unit 5 for a USB camera is used but this can be changed with CLI options.
 
-The demo has been verified with the RPI Camera Module 3 and Logitech C270 USB camera. By default camera unit 5 will be used but this can be changed with CLI options.
-
-#### QSTI 8.0.5 and on
-Depending on which camera you are using when running you will need to specific a different unit where the numbers have been provided below
-
-##### RPI5
+#### RPI5
 - rpi-camera CAM/DISP 0 - unit 3
 - rpi-camera CAM/DISP 1 - unit 4
 - usb-camera            - unit 5
 
-##### RPI4
+#### RPI4
 - rpi-camera - unit 3
 - usb-camera - unit 4
-
-#### QSTI 8.0.4 and before
-Update /etc/startup/post_start.sh to start `sensor` with the correct camera configuration.
 
 ### Models
 
@@ -67,7 +59,7 @@ There are 2 source which can be overlaid:
 - **Visitors**, Every other ros2 node will act as a edge mess publishing their results over the network to other interest parties. If a visitor disconnects for more than 3 seconds the point will be removed.
 
 ## Build
-> Before running the build script ./configure.sh should be run to install all dependencies.
+> Before running the build script `sudo ./configure.sh` should be run to install all dependencies.
 
 A build script has been provided to make building easier but really all it is doing is sourcing the installed ROS2 install and running `colcon build`. For more information about how the build works see `build.sh`
 ```sh
